@@ -1,15 +1,16 @@
 package com.citiworkshopexercises.exercise2.service;
-import com.citiworkshopexercises.exercise2.entity.Employee;
 import java.util.List;
 
+import com.citiworkshopexercises.exercise2.dto.EmployeeDTO;
+
 public interface EmployeeService {
-    List<Employee> fetchEmployeeList();
+    List<EmployeeDTO> fetchEmployeeList();
 
-    Employee findEmployeeById(Long id);
+    EmployeeDTO findEmployeeById(Long id);
 
-    Employee saveEmployee(Employee employee);
+    EmployeeDTO saveEmployee(EmployeeDTO employee);
 
-    Employee updateEmployee(Employee employee, Long id);
+    EmployeeDTO updateEmployee(EmployeeDTO employee, Long id);
 
     void deleteEmployeeById(Long id);
 }

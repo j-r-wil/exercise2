@@ -1,13 +1,11 @@
 package com.citiworkshopexercises.exercise2.repository;
 
-import com.citiworkshopexercises.exercise2.entity.Employee;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-// Annotation
-@Repository
+import com.citiworkshopexercises.exercise2.dto.EmployeeDTO;
 
-// Interface extending CrudRepository
+@Repository
 public interface EmployeeRepository
-    extends CrudRepository<Employee, Long> {
+    extends CrudRepository<EmployeeDTO, Long> {
 }

@@ -1,6 +1,6 @@
 package com.citiworkshopexercises.exercise2.controller;
 
-import com.citiworkshopexercises.exercise2.entity.Employee;
+import com.citiworkshopexercises.exercise2.dto.EmployeeDTO;
 import com.citiworkshopexercises.exercise2.service.EmployeeService;
 import java.util.List;
 import jakarta.validation.Valid;
@@ -14,22 +14,22 @@ public class EmployeeController {
     @Autowired private EmployeeService employeeService;
 
     @PostMapping("/api/employees")
-    public Employee saveEmployee(@Valid @RequestBody Employee employee) {
+    public EmployeeDTO saveEmployee(@Valid @RequestBody EmployeeDTO employee) {
         return employeeService.saveEmployee(employee);
     }
 
     @GetMapping ("/api/employees/{id}")
-    public Employee findEmployeeById(@PathVariable ("id") Long employeeID) {
+    public EmployeeDTO findEmployeeById(@PathVariable ("id") Long employeeID) {
         return employeeService.findEmployeeById(employeeID);
     }
 
     @GetMapping("/api/employees")
-    public List<Employee> fetchEmployeeList() {
+    public List<EmployeeDTO> fetchEmployeeList() {
         return employeeService.fetchEmployeeList();
     }
 
     @PutMapping("/api/employees/{id}")
-    public Employee updateEmployee(@RequestBody Employee employee, @PathVariable("id") Long employeeId) {
+    public EmployeeDTO updateEmployee(@RequestBody EmployeeDTO employee, @PathVariable("id") Long employeeId) {
         return employeeService.updateEmployee(employee, employeeId);
     }
     
